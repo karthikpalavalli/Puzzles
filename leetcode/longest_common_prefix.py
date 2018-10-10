@@ -26,12 +26,11 @@ class Solution:
                     else:
                         break
 
-
             return predicted_common_prefix
 
 
 if __name__ == "__main__":
-    test_strings = ["flower","flow","flight"]
+    test_strings = ["flower", "flow", "flight"]
     lcp = Solution()
     predicted_lcp = lcp.longestCommonPrefix(test_strings)
     print(predicted_lcp)
