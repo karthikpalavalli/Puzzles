@@ -1,19 +1,31 @@
-from copy import deepcopy
+class Solution:
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        input_str = s
 
-input_str = input()
+        max_chars_seen_len = 0
 
-max_chars_seen = []
+        if len(input_str) == 1:
+            return 1
 
-for i in range(len(input_str)):
-    chars_seen = list()
-    chars_seen.append(input_str[i])
+        for i in range(len(input_str)):
+            hashmap_seen = [0 for it in range(128)]
+            hashmap_seen[ord(input_str[i])] = 1
+            len_temp = 0
 
-    for j in range(i + 1, len(input_str)):
-        if input_str[j] in chars_seen:
-            break
-        chars_seen.append(input_str[j])
+            for j in range(i + 1, len(input_str)):
+                if hashmap_seen[ord(input_str[j])]:
+                    len_temp = j - i
+                    break
+                if j == len(input_str) - 1:
+                    len_temp = j - i + 1
+                    break
+                hashmap_seen[ord(input_str[j])] = 1
 
-    if len(chars_seen) > len(max_chars_seen):
-        max_chars_seen = deepcopy(chars_seen)
+            if len_temp > max_chars_seen_len:
+                max_chars_seen_len = len_temp
 
-print(len(max_chars_seen))
+        return max_chars_seen_len
