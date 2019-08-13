@@ -22,5 +22,4 @@ if __name__ == "__main__":
 
     nums = [i for i in range(day_hours + 1)]
     print("Nums: ", nums)
-
     print(sol.combinationSum4(nums, target))

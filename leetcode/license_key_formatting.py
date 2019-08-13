@@ -20,6 +20,7 @@ class Solution:
 
                 if len(S):
                     new_S += '-'
+
         return new_S[::-1]
 
 

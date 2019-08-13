@@ -13,8 +13,6 @@ class Solution:
         intervals = sorted(intervals, key=lambda x: x.start)
         merged_intervals = list()
 
-        # print([(interval.start, interval.end) for interval in intervals])
-
         for interval in intervals:
             if not merged_intervals or merged_intervals[-1].end < interval.start:
                 merged_intervals.append(interval)
@@ -27,7 +25,7 @@ class Solution:
 if __name__ == "__main__":
     sol = Solution()
 
-    intervals_input_list = [[1,3],[2,6],[8,10],[15,18]]
+    intervals_input_list = [[1,3], [2,6], [8,10], [15,18]]
 
     intervals_obj_list = list()
 
