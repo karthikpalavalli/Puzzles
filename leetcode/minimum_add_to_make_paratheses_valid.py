@@ -1,5 +1,3 @@
-
-
 class Solution:
     def minAddToMakeValid(self, S: str) -> int:
         stack = list()
